@@ -20,16 +20,23 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener(){
             try{
-                squareTextView.text = "%.2f".format((radiusEditText.text.toString().toDouble()).pow(2) * 3.1415926535)
+                //squareTextView.text = "%.2f".format((radiusEditText.text.toString().toDouble()).pow(2) * 3.1415926535)
+                when (radiusEditText.text.toString().toDouble()){
+                    in 0.0..1.0 -> squareTextView.text ="1"
+                    in 1.0..7.0 -> squareTextView.text ="OK"
+                    else -> squareTextView.text ="Значение не валидно"
+                    //TODO: давай сделай 8 вариант второй лабы. там надо функцию поудмать и туда сюда сделать мб
+                }
             }
             catch (e: Exception) {
 
-                var toast = Toast.makeText(applicationContext, "Error: Радиус не может быть пустым!", Toast.LENGTH_SHORT)
+                var toast = Toast.makeText(applicationContext, "Error!!!", Toast.LENGTH_SHORT)
                 toast.show()
 
             }
         }
     }
+
 
 
 }
