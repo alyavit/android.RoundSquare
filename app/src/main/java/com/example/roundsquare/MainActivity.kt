@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
                 //squareTextView.text = "%.2f".format((radiusEditText.text.toString().toDouble()).pow(2) * 3.1415926535)
                 when (radiusEditText.text.toString().toDouble()){
                     in 0.0..1.0 -> squareTextView.text ="1"
-                    in 1.0..7.0 -> squareTextView.text ="OK"
+                    in 1.0..7.0 -> squareTextView.text =whatFirstNumber(radiusEditText.text.toString().toDouble())
                     else -> squareTextView.text ="Значение не валидно"
                     //TODO: давай сделай 8 вариант второй лабы. там надо функцию поудмать и туда сюда сделать мб
                 }
@@ -37,6 +37,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun whatFirstNumber (x: Double): String {
+        var i:Int = 1
+        while (x > 0 || i < 5)
+        {x - 1/i
+        i++}
+        return i.toString()
+    }
 
 
 }
