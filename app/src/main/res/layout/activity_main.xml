@@ -47,19 +47,19 @@
             android:id="@+id/radioButton3mon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3 Month" />
+            android:text="3 Месяца (3%)" />
 
         <RadioButton
             android:id="@+id/radioButton6mon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="6 Month" />
+            android:text="6 Месяцев (6%)" />
 
         <RadioButton
             android:id="@+id/radioButton12mon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="12 Month" />
+            android:text="12 Месяцев (9%)" />
     </RadioGroup>
 
     <Button
