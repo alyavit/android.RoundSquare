@@ -27,6 +27,6 @@ class MainActivity : AppCompatActivity() {
         val radBut3mon = findViewById<RadioButton>(R.id.radioButton3mon)
         val radBut6mon = findViewById<RadioButton>(R.id.radioButton6mon)
         val radBut12mon = findViewById<RadioButton>(R.id.radioButton12mon)
-
+        //test
     }
 }
