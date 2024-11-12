@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val radBut6mon = findViewById<RadioButton>(R.id.radioButton6mon)
         val radBut12mon = findViewById<RadioButton>(R.id.radioButton12mon)
 
-        var resultMain = 0
+        var resultMain:Double = 0.0
 
 
         buttonRes.setOnClickListener(){
@@ -44,13 +44,13 @@ class MainActivity : AppCompatActivity() {
             }
             val inputValue = textValue.text.toString().toIntOrNull()
             if (percent != 0 && inputValue != null && inputValue > 0) {
-                    resultMain = percent/100 * inputValue
+                    resultMain = (inputValue.toDouble() * (percent+100.0)/100)
                     val intent = ResultActivity.newIntent(this, resultMain)
                     startActivity(intent)
             } else {
-                var toast = Toast.makeText(applicationContext,"Error: Заполните поля!$",Toast.LENGTH_SHORT)
+                var toast = Toast.makeText(applicationContext,"Error: Заполните поля ${resultMain}!",Toast.LENGTH_SHORT)
                 toast.show()
             }
-            }
+        }
     }
 }

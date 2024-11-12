@@ -13,7 +13,7 @@ class ResultActivity : AppCompatActivity() {
     companion object {
         private const val EXTRA_RESULT = "EXTRA_RESULT"
 
-        fun newIntent(context: Context, result: Int): Intent {
+        fun newIntent(context: Context, result: Double): Intent {
             return Intent(context, ResultActivity::class.java).apply {
                 putExtra(EXTRA_RESULT, result)
             }
@@ -29,11 +29,11 @@ class ResultActivity : AppCompatActivity() {
             insets
         }
 
-        val result = intent.getIntExtra(EXTRA_RESULT, 0)
+        val result:Double = intent.getDoubleExtra(EXTRA_RESULT, 0.0)
 
-        val textViewresult = findViewById<TextView>(R.id.textViewResult)
+        val textViewResult = findViewById<TextView>(R.id.textViewResult)
 
-        textViewresult.setText(result.toString())
+        textViewResult.setText(result.toInt().toString())
     }
 }
 
