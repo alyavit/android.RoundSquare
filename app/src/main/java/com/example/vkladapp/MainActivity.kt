@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import javax.xml.transform.Result
 
 class MainActivity : AppCompatActivity() {
     private val vkladViewModel: VkladViewModel by viewModels()
@@ -29,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         val radBut3mon = findViewById<RadioButton>(R.id.radioButton3mon)
         val radBut6mon = findViewById<RadioButton>(R.id.radioButton6mon)
         val radBut12mon = findViewById<RadioButton>(R.id.radioButton12mon)
-        //test9
+
+        var resultMain = 0
+
 
         buttonRes.setOnClickListener(){
             var percent = when{
@@ -39,8 +42,9 @@ class MainActivity : AppCompatActivity() {
                 else -> 0
             }
 
-            if (percent != 0 && (textValue.toString().toInt() > 0)) {
+            if (percent != 0 && (textValue.text.toString().toInt() > 0)) {
                 //TODO: добавить запуск нового активити с выполнением подсчета по функции
+                val intent = ResultActivity.newIntent(this,resultMain)
             }
 
         }
