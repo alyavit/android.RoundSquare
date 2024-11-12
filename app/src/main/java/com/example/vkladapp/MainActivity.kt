@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                     val intent = ResultActivity.newIntent(this, resultMain)
                     startActivity(intent)
             } else {
-                var toast = Toast.makeText(applicationContext,"Error: Заполните поля ${resultMain}!",Toast.LENGTH_SHORT)
+                var toast = Toast.makeText(applicationContext,"Error: Заполните поля!",Toast.LENGTH_SHORT)
                 toast.show()
             }
         }
