@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -41,12 +42,15 @@ class MainActivity : AppCompatActivity() {
                 radBut12mon.isChecked -> 9
                 else -> 0
             }
-
-            if (percent != 0 && (textValue.text.toString().toInt() > 0)) {
-                //TODO: добавить запуск нового активити с выполнением подсчета по функции
-                val intent = ResultActivity.newIntent(this,resultMain)
+            val inputValue = textValue.text.toString().toIntOrNull()
+            if (percent != 0 && inputValue != null && inputValue > 0) {
+                    val result = percent * inputValue
+                    val intent = ResultActivity.newIntent(this, result)
+                    startActivity(intent)
+            } else {
+                var toast = Toast.makeText(applicationContext,"Error: Заолните поля!",Toast.LENGTH_SHORT)
+                toast.show()
             }
-
-        }
+            }
     }
 }
