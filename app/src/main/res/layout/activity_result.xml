@@ -7,4 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
 
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="316dp"
+        android:layout_height="116dp"
+        android:rotation="19"
+        android:rotationX="28"
+        android:rotationY="-6"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
