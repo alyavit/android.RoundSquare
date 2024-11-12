@@ -44,11 +44,11 @@ class MainActivity : AppCompatActivity() {
             }
             val inputValue = textValue.text.toString().toIntOrNull()
             if (percent != 0 && inputValue != null && inputValue > 0) {
-                    resultMain = percent * inputValue
+                    resultMain = percent/100 * inputValue
                     val intent = ResultActivity.newIntent(this, resultMain)
                     startActivity(intent)
             } else {
-                var toast = Toast.makeText(applicationContext,"Error: Заполните поля!${inputValue}   / $resultMain",Toast.LENGTH_SHORT)
+                var toast = Toast.makeText(applicationContext,"Error: Заполните поля!$",Toast.LENGTH_SHORT)
                 toast.show()
             }
             }
