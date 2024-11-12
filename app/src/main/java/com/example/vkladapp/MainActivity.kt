@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val textValue = findViewById<TextView>(R.id.textView)
+        val textValue = findViewById<TextView>(R.id.editTextNumber)
         val buttonRes = findViewById<Button>(R.id.button)
         val radBut3mon = findViewById<RadioButton>(R.id.radioButton3mon)
         val radBut6mon = findViewById<RadioButton>(R.id.radioButton6mon)
@@ -44,11 +44,11 @@ class MainActivity : AppCompatActivity() {
             }
             val inputValue = textValue.text.toString().toIntOrNull()
             if (percent != 0 && inputValue != null && inputValue > 0) {
-                    val result = percent * inputValue
-                    val intent = ResultActivity.newIntent(this, result)
+                    resultMain = percent * inputValue
+                    val intent = ResultActivity.newIntent(this, resultMain)
                     startActivity(intent)
             } else {
-                var toast = Toast.makeText(applicationContext,"Error: Заолните поля!",Toast.LENGTH_SHORT)
+                var toast = Toast.makeText(applicationContext,"Error: Заполните поля!${inputValue}   / $resultMain",Toast.LENGTH_SHORT)
                 toast.show()
             }
             }
